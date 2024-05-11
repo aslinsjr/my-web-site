@@ -12,7 +12,6 @@
 
 body {
     user-select: none;
-    padding: 0 13%;
     background-color: var(--bg-color);
 }
 
@@ -23,7 +22,7 @@ a {
 /* Header and Footer */
 header,
 footer {
-    margin-top: 1rem;
+    padding: 1rem 13%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -56,12 +55,9 @@ nav {
 
 /* Main Banner */
 section {
-    height: 100vh;
+    height: calc(100vh - 72px);
+    margin: 0 13%;
     border-bottom: 1px solid var(--primary-text-color);
-}
-
-#main-banner {
-    width: 100%;
 }
 
 .text-content {
@@ -132,7 +128,7 @@ h1 {
     width: 450px;
     position: absolute;
     top: 5px;
-    right: 10rem;
+    right: 13%;
     z-index: -1;
     opacity: 0.5;
     animation: blurOut 2s;
@@ -152,51 +148,8 @@ h1 {
     filter: drop-shadow(1px 1px 0.1rem var(--primary-text-color));
 }
 
-.select-and-show-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.select-container {
-    width: 30%;
-    height: 50vh;
-    border: 1px solid var(--primary-text-color);
-    color: var(--primary-text-color);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.5rem;
-    font-size: 2rem;
-    border-radius: 1rem;
-}
-
-.select-container i {
-    transition: 0.5s;
-    cursor: pointer;
-}
-
-#up-btn:hover {
-    transform: translateY(-0.5rem);
-}
-
-#down-btn:hover {
-    transform: translateY(0.5rem);
-}
-
-.projects {
-    width: 100%;
-    overflow: hidden;
-}
-
-#select-img {
-    width: 100%;
-    border-radius: 0.5rem;
-}
-
 .show-container {
-    width: 65%;
+    width: 100%;
     height: 70vh;
     border: 1px solid var(--primary-text-color);
     border-radius: 1rem;
@@ -206,11 +159,35 @@ h1 {
     justify-content: space-between;
     padding: 0.5rem;
     overflow: hidden;
+    position: relative;
+}
+
+.show-container i {
+    position: absolute;
+    color: var(--primary-text-color);
+    font-size: 3rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#left-btn {
+    left: 1rem;
+    top: 40%;
+}
+
+#right-btn {
+    right: 1rem;
+    top: 40%;
+}
+
+.show-container i:hover {
+    transform: scale(1.2);
 }
 
 #showing-img {
     border-radius: 0.85rem;
-    width: 100%;
+    width: 80%;
+    height: 100%;
     overflow-y: hidden;
     object-fit: cover;
     object-position: top;
@@ -277,5 +254,24 @@ button a:hover {
 
     to{
         filter: none;
+    }
+}
+
+@media screen and (max-width:900px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    #description {
+        font-size: 1rem;
+        max-width: max-content;
+    }
+
+    #perfil-img {
+        display: none;
+    }
+
+    .select-container {
+        display: none;
     }
 }

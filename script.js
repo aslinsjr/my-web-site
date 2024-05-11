@@ -106,7 +106,6 @@ function textTraduction() {
 
 textTraduction()
 
-const selectImg = document.querySelector("#select-img");
 const showingImg = document.querySelector("#showing-img");
 const projectTitle= document.querySelector("#project-title");
 const repoProject = document.querySelector("#repo-project");
@@ -114,7 +113,6 @@ const pageProject = document.querySelector("#page-project");
 
 let id = 0;
 
-selectImg.src = projectsData[id].image
 showingImg.src = projectsData[id].image
 projectTitle.innerHTML = projectsData[id].name
 repoProject.href = projectsData[id].repo
@@ -122,14 +120,14 @@ pageProject.href = projectsData[id].page
 
 const navBtns = document.querySelectorAll(".bi")
 
+
 navBtns.forEach((btn) => {
     btn.addEventListener("click", (e) => {
-        if(e.target.id === "up-btn") {
+        if(e.target.id === "right-btn") {
 
             if(id < 10) {
                 id = id + 1
 
-                selectImg.src = projectsData[id].image
                 showingImg.src = projectsData[id].image
                 projectTitle.innerHTML = projectsData[id].name
                 repoProject.href = projectsData[id].repo
@@ -137,12 +135,11 @@ navBtns.forEach((btn) => {
             }
         }
         
-        if(e.target.id === "down-btn") {
+        if(e.target.id === "left-btn") {
 
             if(id >= 1) {
                 id = id - 1
 
-                selectImg.src = projectsData[id].image
                 showingImg.src = projectsData[id].image
                 projectTitle.innerHTML = projectsData[id].name
                 repoProject.href = projectsData[id].repo
