@@ -1,6 +1,6 @@
 :root {
     --bg-gradient: linear-gradient(135deg, hsl(253, 88%, 75%), hsl(253, 42%, 46%));
-    --primary-text-color: rgba(246, 250, 255);
+    --primary-text-color: rgb(245, 249, 255);
     --secondary-color: hsl(253, 42%, 46%);
     --drop-shadow: drop-shadow(1px 1px 0.1rem var(--primary-text-color));
 }
@@ -162,7 +162,7 @@ h1 {
     gap: 1rem;
 }
 
-.show-container button {
+.project-btn {
     text-transform: uppercase;
     letter-spacing: 0.2rem;
     font-weight: lighter;
@@ -172,13 +172,21 @@ h1 {
     color: transparent;
     border-radius: 0.5rem;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.show-container button h3 {
+.project-btn h3 {
     background-image: var(--bg-gradient);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+}
+
+.project-btn img {
+    width: 50px;
+    border: 1.5px solid var(--secondary-color);
 }
 
 
