@@ -139,7 +139,7 @@ function showingProjects() {
 
         const templateProjectBtn = `<a href=${project.repo} class="project-btn" target="_blank">
                         <h3 id="project-title">${project.name}</h3>
-                        <img src="/img/${project.language}-icon.png" alt="" ${project.language === "react" || project.language === "angular" ? 'style= "border-radius: 50%; display: flex; align-itens: center; justify-content: center; padding: 0.4rem"' : ""}>
+                        <img src="img/${project.language}-icon.png" alt="" ${project.language === "react" || project.language === "angular" ? 'style= "border-radius: 50%; display: flex; align-itens: center; justify-content: center; padding: 0.4rem"' : ""}>
                     </a>`
 
         const parser = new DOMParser();
