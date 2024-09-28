@@ -19,6 +19,7 @@ html {
 body {
     user-select: none;
     background-image: var(--bg-gradient);
+    transition: 0.5s;
 }
 
 a {
@@ -50,7 +51,6 @@ nav {
 #personal-brand,
 #contact-me {
     transition: 0.2s;
-    filter: ;
 }
 
 .nav-icons:hover,
@@ -61,9 +61,12 @@ nav {
 
 /* Main Banner */
 section {
+    width: 100%;
     height: calc(100vh - 72px);
-    margin: 0 13%;
+    padding: 0 13%;
     border-bottom: 1px solid var(--primary-text-color);
+    position: relative;
+    overflow: hidden;
 }
 
 .text-content {
@@ -130,17 +133,6 @@ h1 {
     border-bottom: 5px solid hsl(190,27.91%,66.27%);
 }
 
-#perfil-img {
-    width: 450px;
-    position: absolute;
-    top: 5px;
-    right: 13%;
-    z-index: -1;
-    opacity: 0.5;
-    animation: blurOut 2s;
-    transition: 2s;
-}
-
 /* Projects */
 #projects-container {
     display: flex;
@@ -148,33 +140,37 @@ h1 {
 }
 
 #projects-container h2 {
-    margin: 0.5rem 0;
+    height: 15vh;
     color: var(--primary-text-color);
     font-size: 4rem;
     filter: drop-shadow(1px 1px 0.1rem var(--primary-text-color));
 }
 
 .show-container {
+    padding: 5vh 0;
     width: 90%;
-    height: 60vh;
+    height: 100%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
+    z-index: 1;
 }
 
 .project-btn {
+    width: 100%;
     text-transform: uppercase;
     letter-spacing: 0.2rem;
     font-weight: lighter;
     padding: 0.5rem;
     border: none;
     background-color: var(--primary-text-color);
-    color: transparent;
     border-radius: 0.5rem;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    z-index: 2;
+    opacity: 0.5;
 }
 
 .project-btn h3 {
@@ -187,6 +183,15 @@ h1 {
 .project-btn img {
     width: 50px;
     border: 1.5px solid var(--secondary-color);
+}
+
+.showing-img {
+    width: 100%;
+    position: absolute;
+    display: none;
+    top: 15vh;
+    left: 0;
+    opacity: 0.9;
 }
 
 

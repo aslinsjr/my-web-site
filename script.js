@@ -82,7 +82,7 @@ const projectsData = [
     {
         name: "Bootcamp Testimonials Slider",
         id: 11,
-        image: "https://raw.githubusercontent.com/aslinsjr/news-homepage-main/main/assets/images/FireShot%20Capture%20003%20-%20Frontend%20Mentor%20-%20News%20homepage%20-%20127.0.0.7.png",
+        image: "https://raw.githubusercontent.com/aslinsjr/bootcamp-testimonials-slider/refs/heads/master/public/screenshoot.png",
         page: "https://bootcamp-testimonials-slider-alpha.vercel.app/",
         repo: "https://github.com/aslinsjr/bootcamp-testimonials-slider",
         language: "angular"
@@ -90,7 +90,7 @@ const projectsData = [
     {
         name: "Programa Quiz",
         id: 12,
-        image: "https://raw.githubusercontent.com/aslinsjr/jogo-da-memoria/main/img/FireShot%20Capture%20026.png",
+        image: "https://raw.githubusercontent.com/aslinsjr/quiz-solo/refs/heads/main/img/screenshot.png",
         page: "https://aslinsjr.github.io/quiz-solo/",
         repo: "https://github.com/aslinsjr/quiz-solo",
         language: "javascript"
@@ -102,6 +102,10 @@ const mainBanner = document.querySelector("#main-banner")
 const textContent = document.querySelector(".text-content")
 
 const contactMe = document.querySelector("#contact-text");
+
+const showingImg = document.querySelector(".showing-img")
+
+const showContainer = document.querySelector(".show-container")
 
 
 function textTraduction() {
@@ -130,20 +134,48 @@ function textTraduction() {
 
 }
 
+function showingProjects() {
+    projectsData.forEach((project) => {
+
+        const templateProjectBtn = `<a href=${project.repo} class="project-btn" target="_blank">
+                        <h3 id="project-title">${project.name}</h3>
+                        <img src="/img/${project.language}-icon.png" alt="" ${project.language === "react" || project.language === "angular" ? 'style= "border-radius: 50%; display: flex; align-itens: center; justify-content: center; padding: 0.4rem"' : ""}>
+                    </a>`
+
+        const parser = new DOMParser();
+        const htmlTemplate = parser.parseFromString(templateProjectBtn, "text/html");
+        const projectBtn = htmlTemplate.querySelector(".project-btn")
+
+        showContainer.appendChild(projectBtn)
+
+        projectBtn.addEventListener("mouseenter", () => {
+
+            showingImg.src = project.image
+
+            showingImg.style.display = "flex"
+
+            // showContainer.style.opacity = "0.4"
+
+            projectBtn.style.border = "2px solid black"
+
+            projectBtn.style.opacity = "1"
+
+        })
+
+        projectBtn.addEventListener("mouseleave", () => {
+
+            showingImg.style.display = "none"
+
+            projectBtn.style.border = "none"
+
+            projectBtn.style.opacity = "0.5"
+
+        })
+
+    })
+}
+
 textTraduction()
 
-projectsData.forEach((project) => {
+showingProjects()
 
-    const templateProjectBtn = `<a href=${project.repo} class="project-btn" target="_blank">
-                    <h3 id="project-title">${project.name}</h3>
-                    <img src="/img/${project.language}-icon.png" alt="" ${project.language === "react" || project.language === "angular" ? 'style= "border-radius: 50%; display: flex; align-itens: center; justify-content: center; padding: 0.4rem"' : ""}>
-                </a>`
-
-    const parser = new DOMParser();
-    const htmlTemplate = parser.parseFromString(templateProjectBtn, "text/html");
-    const projectBtn = htmlTemplate.querySelector(".project-btn")
-
-    const showContainer = document.querySelector(".show-container")
-
-    showContainer.appendChild(projectBtn)
-})
