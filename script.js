@@ -107,6 +107,10 @@ const showingImg = document.querySelector(".showing-img")
 
 const showContainer = document.querySelector(".show-container")
 
+const body = document.querySelector("body")
+
+const contactMeContainer = document.querySelector("#contact-me")
+
 
 function textTraduction() {
     const template = `<div class="text-content">
@@ -150,32 +154,76 @@ function showingProjects() {
 
         projectBtn.addEventListener("mouseenter", () => {
 
+            const projectsBtn = document.querySelectorAll(".project-btn")
+
+            projectsBtn.forEach((element) => {
+                element.style.opacity = "0"
+            })
+
+            projectBtn.style.opacity = "0.8"
+
             showingImg.src = project.image
 
             showingImg.style.display = "flex"
 
-            // showContainer.style.opacity = "0.4"
+            projectBtn.style.border = "1px solid black"
 
-            projectBtn.style.border = "2px solid black"
-
-            projectBtn.style.opacity = "1"
+            contactMeContainer.style.display = "none"
 
         })
 
         projectBtn.addEventListener("mouseleave", () => {
 
+            const projectsBtn = document.querySelectorAll(".project-btn")
+
+            projectsBtn.forEach((element) => {
+                element.style.opacity = "0.8"
+            })
+
             showingImg.style.display = "none"
 
             projectBtn.style.border = "none"
 
-            projectBtn.style.opacity = "0.5"
+            contactMeContainer.style.display = "flex"
 
         })
 
     })
 }
 
+function scrollPage() {
+
+    body.addEventListener("mousewheel", (e) => {
+
+        if(e.deltaY < 0) {
+            window.scrollTo(0,0)
+        }
+    
+        if(e.deltaY > 0) {
+            window.scrollTo(0,900)
+        }
+    })
+    
+    body.addEventListener("keyup", (e) => {
+    
+        if(e.key === "ArrowUp") {
+            window.scrollTo(0,0)
+        }
+    
+        if(e.key === "ArrowDown") {
+            window.scrollTo(0,900)
+        }
+    })
+
+}
+
+scrollPage()
+
 textTraduction()
 
 showingProjects()
+
+
+
+
 

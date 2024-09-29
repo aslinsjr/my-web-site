@@ -1,5 +1,7 @@
 :root {
-    --bg-gradient: linear-gradient(135deg, hsl(253, 88%, 75%), hsl(253, 42%, 46%));
+    --bg-primary-gradient: linear-gradient(135deg, hsl(253, 88%, 75%), hsl(253, 42%, 46%));
+    --bg-secondary-gradient: linear-gradient(135deg, hsl(253, 55%, 58%), hsl(253, 48%, 46%));
+    --bg-tertiary-gradiente: linear-gradient(135deg, hsl(253, 30%, 24%), hsl(253, 51%, 49%));
     --primary-text-color: rgb(245, 249, 255);
     --secondary-color: hsl(253, 42%, 46%);
     --drop-shadow: drop-shadow(1px 1px 0.1rem var(--primary-text-color));
@@ -17,9 +19,8 @@ html {
 }
 
 body {
-    user-select: none;
-    background-image: var(--bg-gradient);
-    transition: 0.5s;
+    transition: 1s;
+    background-image: var(--bg-tertiary-gradiente);
 }
 
 a {
@@ -64,7 +65,6 @@ section {
     width: 100%;
     height: calc(100vh - 72px);
     padding: 0 13%;
-    border-bottom: 1px solid var(--primary-text-color);
     position: relative;
     overflow: hidden;
 }
@@ -100,7 +100,7 @@ h1 {
 
 #contact-me {
     position: fixed;
-    bottom: 1.5rem;
+    bottom: 10vh;
     right: 1.5rem;
     display: flex;
     flex-direction: column;
@@ -130,7 +130,7 @@ h1 {
 }
 
 #text-decoration-h1 {
-    border-bottom: 5px solid hsl(190,27.91%,66.27%);
+    border-bottom: 5px solid var(--primary-text-color);
 }
 
 /* Projects */
@@ -144,6 +144,7 @@ h1 {
     color: var(--primary-text-color);
     font-size: 4rem;
     filter: drop-shadow(1px 1px 0.1rem var(--primary-text-color));
+    opacity: 0.8;
 }
 
 .show-container {
@@ -152,37 +153,46 @@ h1 {
     height: 100%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
+    gap: 2rem;
     z-index: 1;
 }
 
 .project-btn {
     width: 100%;
-    text-transform: uppercase;
-    letter-spacing: 0.2rem;
-    font-weight: lighter;
+    height: 20vh;
     padding: 0.5rem;
     border: none;
     background-color: var(--primary-text-color);
     border-radius: 0.5rem;
     cursor: pointer;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     z-index: 2;
-    opacity: 0.5;
+    position: relative;
+    gap: 1rem;
+    opacity: 0.8;
 }
 
 .project-btn h3 {
-    background-image: var(--bg-gradient);
+    text-transform: uppercase;
+    font-weight: bolder;
+    background-image: var(--bg-tertiary-gradiente);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+    margin-bottom: 1.5rem;
+
 }
 
 .project-btn img {
-    width: 50px;
+    position: absolute;
+    width: 40px;
     border: 1.5px solid var(--secondary-color);
+    right: 0.5rem;
+    bottom: 0.5rem;
+    opacity: 0.5;
 }
 
 .showing-img {
@@ -227,9 +237,26 @@ h1 {
     }
 }
 
+
 @media screen and (max-width:900px) {
+    header,
+    #main-banner,
+    #projects-container,
+    footer {
+        padding: 1rem;
+    }
+
+    #main-banner {
+        height: calc(100vh - 72px);
+    }
+
     h1 {
         font-size: 2rem;
+        margin-top: 2rem;
+    }
+
+    .text-content {
+        justify-content: flex-start;
     }
 
     #description {
@@ -237,11 +264,24 @@ h1 {
         max-width: max-content;
     }
 
-    #perfil-img {
-        display: none;
+    #projects-container h2 {
+        font-size: 2rem;
+        height: fit-content;
     }
 
-    .select-container {
-        display: none;
+    .show-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        overflow: visible ;
+    }
+
+    section {
+        overflow: visible ; 
+        height: fit-content;
+    }
+
+
+    #contact-me {
+        position: absolute;
     }
 }
