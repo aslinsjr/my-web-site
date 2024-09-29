@@ -133,8 +133,8 @@ function textTraduction() {
         setTimeout(() => {
             mainBanner.replaceChild(textContent, traduction);
             contactMe.innerText = "Fale comigo"
-        }, 9000)
-    }, 18000)
+        }, 15000)
+    }, 15000)
 
 }
 

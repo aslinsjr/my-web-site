@@ -140,9 +140,8 @@ h1 {
 }
 
 #projects-container h2 {
-    height: 15vh;
     color: var(--primary-text-color);
-    font-size: 4rem;
+    font-size: 3.5rem;
     filter: drop-shadow(1px 1px 0.1rem var(--primary-text-color));
     opacity: 0.8;
 }
