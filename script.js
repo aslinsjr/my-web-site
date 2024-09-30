@@ -152,41 +152,45 @@ function showingProjects() {
 
         showContainer.appendChild(projectBtn)
 
-        projectBtn.addEventListener("mouseenter", () => {
+        if(window.screen.width > 400) {
+            projectBtn.addEventListener("mouseenter", () => {
 
-            const projectsBtn = document.querySelectorAll(".project-btn")
-
-            projectsBtn.forEach((element) => {
-                element.style.opacity = "0"
+                const projectsBtn = document.querySelectorAll(".project-btn")
+    
+                projectsBtn.forEach((element) => {
+                    element.style.opacity = "0"
+                })
+    
+                projectBtn.style.opacity = "0.8"
+    
+                showingImg.src = project.image
+    
+                showingImg.style.display = "flex"
+    
+                projectBtn.style.border = "1px solid black"
+    
+                contactMeContainer.style.display = "none"
+    
             })
-
-            projectBtn.style.opacity = "0.8"
-
-            showingImg.src = project.image
-
-            showingImg.style.display = "flex"
-
-            projectBtn.style.border = "1px solid black"
-
-            contactMeContainer.style.display = "none"
-
-        })
-
-        projectBtn.addEventListener("mouseleave", () => {
-
-            const projectsBtn = document.querySelectorAll(".project-btn")
-
-            projectsBtn.forEach((element) => {
-                element.style.opacity = "0.8"
+    
+            projectBtn.addEventListener("mouseleave", () => {
+    
+                const projectsBtn = document.querySelectorAll(".project-btn")
+    
+                projectsBtn.forEach((element) => {
+                    element.style.opacity = "0.8"
+                })
+    
+                showingImg.style.display = "none"
+    
+                projectBtn.style.border = "none"
+    
+                contactMeContainer.style.display = "flex"
+    
             })
-
-            showingImg.style.display = "none"
-
-            projectBtn.style.border = "none"
-
-            contactMeContainer.style.display = "flex"
-
-        })
+        } else {
+            return
+        }
 
     })
 }
@@ -200,7 +204,7 @@ function scrollPage() {
         }
     
         if(e.deltaY > 0) {
-            window.scrollTo(0,900)
+            window.scrollTo(0,800)
         }
     })
     
@@ -223,9 +227,7 @@ textTraduction()
 
 showingProjects()
 
-const title = document.querySelector("#projects-container")
-
-console.log(title.getBoundingClientRect().y)
+console.log()
 
 
 

@@ -237,12 +237,17 @@ h1 {
 }
 
 
-@media screen and (max-width:900px) {
+@media screen and (max-width:600px) {
     header,
     #main-banner,
     #projects-container,
     footer {
-        padding: 1rem;
+        padding: 2rem;
+    }
+
+    section {
+        overflow: visible ; 
+        height: fit-content;
     }
 
     #main-banner {
@@ -263,24 +268,30 @@ h1 {
         max-width: max-content;
     }
 
+    #projects-container {
+        gap: 1rem;
+    }
+
     #projects-container h2 {
         font-size: 2rem;
         height: fit-content;
     }
 
     .show-container {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
-        overflow: visible ;
+        width: 300px;
+        height: 200px;
+        display: flex;
+        overflow: scroll;
+        flex-direction: column;
+        padding: 0;
     }
 
-    section {
-        overflow: visible ; 
-        height: fit-content;
+    .showing-img {
+        display: none;
     }
-
 
     #contact-me {
         position: absolute;
     }
+    
 }
