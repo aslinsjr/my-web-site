@@ -211,7 +211,7 @@ function scrollPage() {
         }
     
         if(e.key === "ArrowDown") {
-            window.scrollTo(0,900)
+            window.scrollTo(0,800)
         }
     })
 
@@ -222,6 +222,10 @@ scrollPage()
 textTraduction()
 
 showingProjects()
+
+const title = document.querySelector("#projects-container")
+
+console.log(title.getBoundingClientRect().y)
 
 
 
