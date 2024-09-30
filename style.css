@@ -289,9 +289,7 @@ h1 {
     }
 
     .contact-control {
-        display: flex;
-        flex-direction: row-reverse;
-        padding: 0 2rem;
+        display: none;
     }
 
     #contact-me {
