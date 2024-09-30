@@ -221,6 +221,21 @@ function scrollPage() {
         }
     })
 
+    body.addEventListener("touchend", (e) => {
+    
+        if(e.changedTouches[0].clientY > 120) {
+            window.scrollTo(0,0)
+
+            console.log(e.changedTouches[0].clientY)
+        }
+    
+        if(e.changedTouches[0].clientY > 0 && e.changedTouches[0].clientY < 120) {
+            window.scrollTo(0,800)
+
+            console.log(e.changedTouches[0].clientY)
+        }
+    })
+
 }
 
 scrollPage()
@@ -228,9 +243,6 @@ scrollPage()
 textTraduction()
 
 showingProjects()
-
-console.log()
-
 
 
 
