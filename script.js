@@ -152,7 +152,10 @@ function showingProjects() {
 
         showContainer.appendChild(projectBtn)
 
-        if(window.screen.width > 400) {
+        if(window.screen.width <= 400) {
+            return
+           
+        } else {
             projectBtn.addEventListener("mouseenter", () => {
 
                 const projectsBtn = document.querySelectorAll(".project-btn")
@@ -188,8 +191,6 @@ function showingProjects() {
                 contactMeContainer.style.display = "flex"
     
             })
-        } else {
-            return
         }
 
     })
