@@ -289,7 +289,10 @@ h1 {
     }
 
     #contact-me {
+        width: fit-content;
         position: absolute;
+        bottom: -2.5rem;
+        
     }
     
 }
