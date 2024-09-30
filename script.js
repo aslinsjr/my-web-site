@@ -152,9 +152,10 @@ function showingProjects() {
 
         showContainer.appendChild(projectBtn)
 
-        if(window.screen.width <= 400) {
-            return
-           
+        if(window.screen.width <= 600) {
+
+            console.log(window.screen.width)
+
         } else {
             projectBtn.addEventListener("mouseenter", () => {
 
