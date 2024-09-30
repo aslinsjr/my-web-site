@@ -246,12 +246,9 @@ h1 {
     }
 
     section {
+        height: fit-content;
         overflow: visible ; 
         height: fit-content;
-    }
-
-    #main-banner {
-        height: calc(100vh - 72px);
     }
 
     h1 {
@@ -269,6 +266,7 @@ h1 {
     }
 
     #projects-container {
+        margin-top: 3rem;
         gap: 1rem;
     }
 
@@ -279,7 +277,7 @@ h1 {
 
     .show-container {
         width: 300px;
-        height: 200px;
+        height: 250px;
         display: flex;
         overflow: scroll;
         flex-direction: column;
