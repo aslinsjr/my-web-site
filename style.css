@@ -288,8 +288,14 @@ h1 {
         display: none;
     }
 
+    .contact-control {
+        display: flex;
+        flex-direction: row-reverse;
+        padding: 0 2rem;
+    }
+
     #contact-me {
-        display: none;    
+        position: unset;    
     }
     
 }
