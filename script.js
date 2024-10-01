@@ -221,20 +221,20 @@ function scrollPage() {
         }
     })
 
-    // body.addEventListener("touchend", (e) => {
+    body.addEventListener("touchend", (e) => {
     
-    //     if(e.changedTouches[0].clientY > 400) {
-    //         window.scrollTo(0,0)
+        if(e.changedTouches[0].clientY > 400) {
+            window.scrollTo(0,0)
 
-    //         console.log(e.changedTouches[0].clientY)
-    //     }
+            console.log(e.changedTouches[0])
+        }
     
-    //     if(e.changedTouches[0].clientY > 0 && e.changedTouches[0].clientY < 400) {
-    //         window.scrollTo(0,800)
+        if(e.changedTouches[0].clientY > 0 && e.changedTouches[0].clientY < 400) {
+            window.scrollTo(0,800)
 
-    //         console.log(e.changedTouches[0].clientY)
-    //     }
-    // })
+            console.log(e.changedTouches[0])
+        }
+    })
 
 }
 
