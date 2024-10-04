@@ -202,6 +202,7 @@ h1 {
     top: 15vh;
     left: 0;
     opacity: 0.9;
+    animation: fadeInProjects 1s;
 }
 
 
@@ -209,6 +210,17 @@ h1 {
     from {
         opacity: 0;
         transform: scale(0.5);
+    }
+
+    
+    to {
+        opacity: 0.8;
+    }
+}
+
+@keyframes fadeInProjects {
+    from {
+        opacity: 0;
     }
 
     
